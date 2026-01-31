@@ -8,7 +8,7 @@ from app.lib.image import generate_font_char_image
 
 
 def run():
-    cleanup("images")
+    cleanup("dataset")
 
     font_paths = [
         "fonts/ipamjm00601/ipamjm.ttf",
@@ -46,7 +46,7 @@ def cleanup(dir: str):
 def generate(font_path: str, char: str):
     font_name = Path(font_path).stem
     unicode_hex = format(ord(char), "04X")
-    output_dir = Path("images") / unicode_hex
+    output_dir = Path("dataset") / unicode_hex
     output_dir.mkdir(parents=True, exist_ok=True)
     output = output_dir / f"{font_name}.jpg"
     generate_font_char_image(font_path, char, str(output), 50)

@@ -6,7 +6,7 @@ from app.lib.image import generate_font_char_image
 def test_generate_font_char_image():
     font_path = "fonts/ipamjm00601/ipamjm.ttf"
     char = "﨑"
-    output = "tests/images/test_output.jpg"
+    output = "tests/dataset/test_output.jpg"
 
     try:
         generate_font_char_image(font_path, char, output, image_size=256)
@@ -22,7 +22,7 @@ def test_generate_font_char_image():
 def test_generate_font_char_image_custom_size():
     font_path = "fonts/ipamjm00601/ipamjm.ttf"
     char = "﨑"
-    output = "tests/images/test_output_custom.jpg"
+    output = "tests/dataset/test_output_custom.jpg"
 
     try:
         generate_font_char_image(font_path, char, output, image_size=512, font_size=400)
